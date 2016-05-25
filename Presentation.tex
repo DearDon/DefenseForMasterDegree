@@ -1,0 +1,113 @@
+\documentclass[compress]{beamer}
+%为了打印[]中还可加入handout或tran
+%compress用于压缩侧边栏和上下两端的导航条，使文档紧凑
+\usepackage{ctex}
+%为支持汉字，由于ctex文档类中没有beamer的，故用普通文档类，再引入ctex包即可
+%支持中文，其实该包会默认在document环境中加入CJK环境以支持中文，所以cjk包的
+%命令它都支持
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps}
+%上面的包都是一些用pgf分布图的包
+\usepackage{graphicx}%用于插入图片
+\usepackage{beamerthemesplit}
+\usepackage{multimedia}
+
+%下面用于自定义模板
+
+\beamertemplateshadingbackground{red!10}{structure!10}
+%设置背景色由%10的红变为%10的结构颜色
+
+\beamertemplatetransparentcoveredhigh
+%隐藏文本高度透明
+
+\beamertemplatetransparentcovereddynamicmedium
+%使所有被隐藏的文本完全透明，动态
+
+%\usetheme{Warsaw}
+\usetheme{Singapore}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%使用主题
+
+\setbeamertemplate{footline}[page number]{}
+%除掉页面下方的信息条
+\setbeamertemplate{navigation symbols}{}
+%除掉页面下方导航条
+
+\begin{document}
+\title{波形拟合反演震源机制的定权研究及误差评定}
+\author{邓东平}
+\institute{武汉大学测绘学院}
+\date{}
+\AtBeginSection[]{
+	\frame<handout:0>{
+		\frametitle{大纲}
+		\tableofcontents[current,currentsubsection]
+	}
+}
+
+
+\frame{\titlepage}
+\transdissolve<5>
+\section*{Outline}
+\frame{
+\frametitle{概况}
+\tableofcontents
+}
+\section{方法原理}
+\frame{
+	\frametitle{secname}
+	\begin{itemize}
+		\item<+-> Install
+		\item<+-> learn
+		\item<+-> practise
+	\end{itemize}
+}
+\section{背景及意义}
+\frame
+{
+	\frametitle{\secname}
+	\begin{description}
+	\item{what is it}
+	it's a kind of picture
+	\item{what is it for}
+	To show sth
+	\item{advantage}
+	convenient\\
+	beautiful
+	\end{description}
+}
+\subsection{Overview of the Beamer Class}
+\frame{
+	\frametitle{Features of the Beamer Class}
+	\begin{itemize}
+		\item<+-> Seeing is result tools
+			\begin{enumerate}
+			\item Powerpoint
+			\item Magick Point
+			\end{enumerate}
+		\item<+-> Based on Tex and PDF
+			\begin{enumerate}[<+->]
+			\item Beamer
+			\item Foiltex
+			\item ConText
+			\end{enumerate}
+	\end{itemize}
+}
+\subsection{视频音乐}
+\frame{
+\frametitle{\subsecname}
+\begin{itemize}
+	\item 音乐\\
+	\item 视频（now不可播）
+\end{itemize}
+}
+\section{方法原理}
+\frame{
+	\frametitle{secname}
+	\begin{itemize}
+		\item<+-> Install
+		\item<+-> learn
+		\item<+-> practise
+	\end{itemize}
+}
+\end{document}

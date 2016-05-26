@@ -8,5 +8,5 @@
 \beamer@subsectionintoc {4}{2}{误差估计}{26}{0}{3}
 \beamer@sectionintoc {5}{实践检验}{35}{0}{4}
 \beamer@subsectionintoc {5}{1}{理论实验}{36}{0}{4}
-\beamer@subsectionintoc {5}{2}{实例应用}{39}{0}{4}
-\beamer@sectionintoc {6}{总结和展望}{42}{0}{5}
+\beamer@subsectionintoc {5}{2}{实例应用}{45}{0}{4}
+\beamer@sectionintoc {6}{总结和展望}{48}{0}{5}

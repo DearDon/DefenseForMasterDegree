@@ -175,18 +175,74 @@
 \section{实践检验}
 \subsection{理论实验}
 \frame{
-	\frametitle{\subsecname}
+	\frametitle{实验条件}
+		走向250$^\circ$，倾角40$^\circ$，滑动角82$^\circ$，$M_w$震级6.5，震源深度17km 
+		\begin{columns}
+		\column{0.4\textwidth}<1->
+		\includegraphics[height=3.5cm]{figures/fig3_01.pdf}
+		\column{0.5\textwidth}<1->
+		\centering
+		\includegraphics[height=5.5cm,angle=-90]{figures/fig3_02.pdf}
+		\end{columns}
+}
+\frame{
+	\frametitle{无噪实验}
 	\begin{itemize}
-		\item<+-> Install
-		\item<+-> learn
-		\item<+-> practise
+		\item<+-> 数据拟合度100％，结果与理论设定一致
+		\item<+-> 台站分布合理，满足反演要求
+		\item<+-> 说明分辩核为单位矩阵
+		\item<+-> 计算机数值计算引起的误差可忽略
+	\end{itemize}
+}
+\frame{
+	\frametitle{权重对比实验}
+	\begin{table}[ht]
+	\label{tab3_01}
+    \begin{tabular}{c c c c c c c}
+    \hline
+     & 走向/$^\circ$ & 倾角/$^\circ$ & 滑动角/$^\circ$ & 深度/km & 拟合度 & 震级\\
+    \hline
+    真值	& 250 & 40 & 82 & 17 & 1	& 6.50\\
+    W1		& 252 & 40 & 82 & 18 & 0.91 & 6.52\\
+    W2		& 245 & 39 & 78 & 17 & 0.75 & 6.47\\
+    WT		& 250 & 40 & 81 & 17 & 0.84 & 6.50\\
+    \hline
+    \end{tabular}
+	\end{table}
+	\begin{itemize}
+		\item W1加权拟合度最高，但深度有偏差
+		\item W2加权深度无偏差，拟合度最低
+		\item 本文联合加权深度无偏，拟合度较高，综合效果最优
+	\end{itemize}
+}
+\frame{
+	\frametitle{噪声强度对比实验}
+	\begin{table}[ht]
+	\centering
+	\label{tab3_06}
+    \begin{tabular}{c c c c c}
+    \hline
+    加噪强度 & 走向/$^\circ$ & 倾角/$^\circ$ & 滑动角/$^\circ$ &拟合度 \\
+    \hline
+    无噪声		& 250 & 40 & 82  & 1\\
+    低噪声($1.0\cdot10^{-6}$)		& 250$\pm$3 & 40$\pm$3 & 82$\pm$3 & 0.99 \\
+    中等噪声($2.5\cdot10^{-6}$)	& 250$\pm$8 & 40$\pm$3 & 83$\pm$7 & 0.94 \\
+    高噪声($5.0\cdot10^{-6}$)		& 246$\pm$18 & 40$\pm$6 & 78$\pm$17 & 0.87 \\
+    超高噪声($1.0\cdot10^{-5}$)	& 245$\pm$30 & 42$\pm$14 & 84$\pm$36 & 0.65 \\
+    \hline
+    \end{tabular}
+	\end{table}
+	\begin{itemize}
+		\item<+-> 局部线性近似下，理论误差大小与噪声强度成正比，与结果吻合
+		\item<+-> 拟合度表征反演受噪声影响程度，结果表明拟合度低，误差大，稳定性差
+		\item<+-> 各组反演结果均在误差范围内，证明了误差估计的准确性
 	\end{itemize}
 }
 \subsection{实例应用}
 \frame{
 	\frametitle{\subsecname}
 	\begin{itemize}
-		\item<+-> Install
+		\item<+-> Start here
 		\item<+-> learn
 		\item<+-> practise
 	\end{itemize}

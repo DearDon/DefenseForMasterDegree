@@ -35,12 +35,14 @@
 
 \begin{document}
 \title{波形拟合反演震源机制的定权研究及误差评定}
-\author{邓东平}
-\institute{武汉大学测绘学院}
+\author{邓东平 2013202140004\\
+	导师：朱良保教授}
+\institute{\includegraphics[height=3cm]{figures/whulogo.eps}\\
+	武汉大学测绘学院}
 \date{}
 \AtBeginSection[]{
 	\frame<handout:0>{
-		\frametitle{大纲}
+		\frametitle{进度}
 		\tableofcontents[current,currentsubsection]
 	}
 }
@@ -48,12 +50,80 @@
 
 \frame{\titlepage}
 \transdissolve<5>
-\section*{Outline}
+\section*{导航}
 \frame{
-\frametitle{概况}
+\frametitle{概览}
 \tableofcontents
 }
-\section{方法原理}
+\section{研究意义和现状}
+\frame{
+	\frametitle{研究意义}
+	\begin{itemize}
+		\item 发震构造研究、灾害评估
+		\item 区域应力、地震活动性
+		\item 介质结构、海啸模拟等研究
+	\end{itemize}
+}
+\frame{
+	\frametitle{研究现状}
+	\begin{itemize}
+		\item<+->{原理:}
+			\begin{equation}
+			\label{eq01}
+			\left\{
+			 \begin{array}{l}
+			    U_z(r,\phi,0,\omega)=Z_{SS}{\cdot}s_2+Z_{DS}{\cdot}s_3+Z_{DD}{\cdot}s_1\\
+			    U_r(r,\phi,0,\omega)=R_{SS}{\cdot}s_2+R_{DS}{\cdot}s_3+R_{DD}{\cdot}s_1\\
+				U_{\phi}(r,\phi,0,\omega)=T_{SS}{\cdot}t_2+T_{DS}{\cdot}t_1\\
+			 \end{array}
+			\right.
+			\end{equation}
+		\item<+->{方法:}波形拟合(波形数据),格点搜索(公式\ref{eq01}非线性),
+		\item<+->{应用:}CAP,CPS等代表性方法(程序)广泛应用
+	\end{itemize}
+}
+\frame{
+	\frametitle{研究现状}
+	\begin{itemize}
+		\item<+->{优点:}
+			\begin{enumerate}[<+->]
+			\item 波形数据充分应用了地震波信息
+			\item 震源机制解空间较小，且正演合成迅速，格点搜索可快速反演
+			\end{enumerate}
+		\item<+->{问题:}
+			\begin{enumerate}[<+->]
+			\item 无法直接给出误差评价,无法有效识别病态问题
+			\item CAP和CPS的加权方案不一致,数值相对大小冲突
+			\end{enumerate}
+	\end{itemize}
+}
+
+\section{研究目标和解决方案}
+\subsection{研究目标}
+\frame{
+	\frametitle{研究目标}
+	\begin{itemize}
+		\item<+-> 统一优化定权
+		\item<+-> 针对CAP、CPS给出结果误差评价
+	\end{itemize}
+}
+\subsection{解决方案}
+\frame{
+\frametitle{\subsecname}
+	\begin{itemize}
+		\item<+-> 统一优化定权
+			\begin{enumerate}[<+->]
+			\item 分析二者定权的理论依据,联合定权解决差异
+			\item 数值定量精化，结果尽量客观
+			\end{enumerate}
+		\item<+-> 针对CAP、CPS给出结果误差评价
+			\begin{enumerate}[<+->]
+			\item 误差方差
+			\item 相关系数
+			\end{enumerate}
+	\end{itemize}
+}
+\section{实验检验}
 \frame{
 	\frametitle{secname}
 	\begin{itemize}
@@ -62,46 +132,16 @@
 		\item<+-> practise
 	\end{itemize}
 }
-\section{背景及意义}
-\frame
-{
-	\frametitle{\secname}
-	\begin{description}
-	\item{what is it}
-	it's a kind of picture
-	\item{what is it for}
-	To show sth
-	\item{advantage}
-	convenient\\
-	beautiful
-	\end{description}
-}
-\subsection{Overview of the Beamer Class}
+\section{案例应用}
 \frame{
-	\frametitle{Features of the Beamer Class}
+	\frametitle{secname}
 	\begin{itemize}
-		\item<+-> Seeing is result tools
-			\begin{enumerate}
-			\item Powerpoint
-			\item Magick Point
-			\end{enumerate}
-		\item<+-> Based on Tex and PDF
-			\begin{enumerate}[<+->]
-			\item Beamer
-			\item Foiltex
-			\item ConText
-			\end{enumerate}
+		\item<+-> Install
+		\item<+-> learn
+		\item<+-> practise
 	\end{itemize}
 }
-\subsection{视频音乐}
-\frame{
-\frametitle{\subsecname}
-\begin{itemize}
-	\item 音乐\\
-	\item 视频（now不可播）
-\end{itemize}
-}
-\section{方法原理}
+\section{总结和展望}
 \frame{
 	\frametitle{secname}
 	\begin{itemize}

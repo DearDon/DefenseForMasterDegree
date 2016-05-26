@@ -1,5 +1,8 @@
 \beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
-\beamer@subsectionintoc {2}{1}{Overview of the Beamer Class}{5}{0}{1}
-\beamer@subsectionintoc {2}{2}{视频音乐}{10}{0}{1}
-\beamer@sectionintoc {3}{How to use Beamer}{11}{0}{2}
+\beamer@sectionintoc {2}{研究意义和现状}{3}{0}{1}
+\beamer@sectionintoc {3}{研究目标和解决方案}{14}{0}{2}
+\beamer@subsectionintoc {3}{1}{研究目标}{15}{0}{2}
+\beamer@subsectionintoc {3}{2}{解决方案}{17}{0}{2}
+\beamer@sectionintoc {4}{实验检验}{23}{0}{3}
+\beamer@sectionintoc {5}{案例应用}{27}{0}{4}
+\beamer@sectionintoc {6}{总结和展望}{31}{0}{5}

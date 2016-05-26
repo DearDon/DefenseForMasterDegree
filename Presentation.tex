@@ -9,7 +9,8 @@
 %上面的包都是一些用pgf分布图的包
 \usepackage{graphicx}%用于插入图片
 \usepackage{beamerthemesplit}
-\usepackage{multimedia}
+\usepackage{multicol}
+\usepackage{multirow}
 
 %下面用于自定义模板
 
@@ -42,7 +43,7 @@
 \date{}
 \AtBeginSection[]{
 	\frame<handout:0>{
-		\frametitle{进度}
+		\frametitle{预览}
 		\tableofcontents[current,currentsubsection]
 	}
 }
@@ -50,12 +51,12 @@
 
 \frame{\titlepage}
 \transdissolve<5>
-\section*{导航}
+\section*{}
 \frame{
 \frametitle{概览}
 \tableofcontents
 }
-\section{研究意义和现状}
+\section{研究意义}
 \frame{
 	\frametitle{研究意义}
 	\begin{itemize}
@@ -64,6 +65,8 @@
 		\item 介质结构、海啸模拟等研究
 	\end{itemize}
 }
+\section{研究现状和本文目标}
+\subsection{研究现状}
 \frame{
 	\frametitle{研究现状}
 	\begin{itemize}
@@ -97,44 +100,91 @@
 			\end{enumerate}
 	\end{itemize}
 }
-
-\section{研究目标和解决方案}
-\subsection{研究目标}
+\subsection{本文目标}
 \frame{
-	\frametitle{研究目标}
+	\frametitle{\subsecname}
 	\begin{itemize}
-		\item<+-> 统一优化定权
-		\item<+-> 针对CAP、CPS给出结果误差评价
+		\item 统一优化定权
+		\item 针对CAP、CPS给出结果误差评价
 	\end{itemize}
 }
-\subsection{解决方案}
+
+\section{解决方案}
 \frame{
 \frametitle{\subsecname}
 	\begin{itemize}
-		\item<+-> 统一优化定权
-			\begin{enumerate}[<+->]
+		\item 优化定权
+			\begin{enumerate}
 			\item 分析二者定权的理论依据,联合定权解决差异
 			\item 数值定量精化，结果尽量客观
 			\end{enumerate}
-		\item<+-> 针对CAP、CPS给出结果误差评价
-			\begin{enumerate}[<+->]
-			\item 误差方差
-			\item 相关系数
+		\item 针对CAP、CPS给出结果误差评价
+			\begin{enumerate}
+			\item 估计数据噪声
+			\item 计算震源机制协方差矩阵
 			\end{enumerate}
 	\end{itemize}
 }
-\section{实验检验}
+\subsection{优化加权}
 \frame{
-	\frametitle{secname}
+\frametitle{优化加权}
+	\begin{itemize}
+		\item<+-> 联合加权
+			\begin{enumerate}[<+->]
+			\item CPS加权$W1$,考虑信噪比,权重随震中距单调递减
+			\item CAP加权$W2$,考虑振幅调节，权重随震中距单调递增
+			\item 信噪比和振幅调节均可提高数据质量，应联合统一$WT=W1*W2$
+			\end{enumerate}
+		\item<+-> 定量精化
+			\begin{enumerate}[<+->]
+			\item 利用震中距估计的$W1,W2$均较粗糙，改为由波形数据直接定量计算
+			\item CAP加权估计$W2$的公式$(r/r_0)^p$中的参考参数$r_0,p$只能经验判定，主观性很强
+			\end{enumerate}
+		\item<+-> 本文最终权重
+			\begin{enumerate}
+			\item $WT=(1-NoiseStd/WaveStd)/L2norm$
+			\end{enumerate}
+	\end{itemize}
+}
+\subsection{误差估计}
+\frame{
+\frametitle{误差估计}
+	\begin{columns}
+	\column{0.4\textwidth}<1->
+	\includegraphics[height=7.5cm]{figures/flowchart.pdf}
+	\column{0.6\textwidth}<1->
+	\begin{itemize}
+		\item<+-> STEP1 估计数据噪声
+			\begin{enumerate}[<+->]
+			\item 截取震前平静期数据样本
+			\item 参数估计得到噪声分布函数(高斯)
+			\end{enumerate}
+		\item<+-> STEP2 随机生成模拟数据集
+			\begin{enumerate}[<+->]
+			\item 用噪声分布函数随机生成噪声数据
+			\item 噪声数据与原始观测数据叠加，生成多组模拟观测数据
+			\end{enumerate}
+		\item<+-> STEP3 反演得解集并计算协方差矩阵
+			\begin{enumerate}[<+->]
+			\item 每组"观测"数据独立反演，得随机误差范围内解集
+			\item 对解集统计分析，计算震源机制三参数协方差矩阵
+			\end{enumerate}
+	\end{itemize}
+	\end{columns}
+}
+\section{实践检验}
+\subsection{理论实验}
+\frame{
+	\frametitle{\subsecname}
 	\begin{itemize}
 		\item<+-> Install
 		\item<+-> learn
 		\item<+-> practise
 	\end{itemize}
 }
-\section{案例应用}
+\subsection{实例应用}
 \frame{
-	\frametitle{secname}
+	\frametitle{\subsecname}
 	\begin{itemize}
 		\item<+-> Install
 		\item<+-> learn

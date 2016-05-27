@@ -9,4 +9,4 @@
 \beamer@sectionintoc {5}{实践检验}{35}{0}{4}
 \beamer@subsectionintoc {5}{1}{理论实验}{36}{0}{4}
 \beamer@subsectionintoc {5}{2}{实例应用}{45}{0}{4}
-\beamer@sectionintoc {6}{总结和展望}{48}{0}{5}
+\beamer@sectionintoc {6}{总结和展望}{56}{0}{5}

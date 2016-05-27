@@ -51,17 +51,31 @@
 \headcommand {\slideentry {5}{1}{4}{42/44}{理论实验}{0}}
 \headcommand {\beamer@framepages {42}{44}}
 \headcommand {\beamer@subsectionentry {0}{5}{2}{45}{实例应用}}\headcommand {\beamer@subsectionpages {36}{44}}
-\headcommand {\slideentry {5}{2}{1}{45/47}{实例应用}{0}}
-\headcommand {\beamer@framepages {45}{47}}
-\headcommand {\sectionentry {6}{总结和展望}{48}{总结和展望}{0}}
-\headcommand {\beamer@sectionpages {35}{47}}
-\headcommand {\beamer@subsectionpages {45}{47}}
-\headcommand {\slideentry {6}{0}{1}{48/48}{}{0}}
-\headcommand {\beamer@framepages {48}{48}}
-\headcommand {\slideentry {6}{0}{2}{49/51}{}{0}}
-\headcommand {\beamer@framepages {49}{51}}
-\headcommand {\beamer@partpages {1}{51}}
-\headcommand {\beamer@subsectionpages {48}{51}}
-\headcommand {\beamer@sectionpages {48}{51}}
-\headcommand {\beamer@documentpages {51}}
-\headcommand {\def \inserttotalframenumber {20}}
+\headcommand {\slideentry {5}{2}{1}{45/45}{实例应用}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {5}{2}{2}{46/47}{实例应用}{0}}
+\headcommand {\beamer@framepages {46}{47}}
+\headcommand {\slideentry {5}{2}{3}{48/50}{实例应用}{0}}
+\headcommand {\beamer@framepages {48}{50}}
+\headcommand {\slideentry {5}{2}{4}{51/51}{实例应用}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\slideentry {5}{2}{5}{52/52}{实例应用}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {5}{2}{6}{53/55}{实例应用}{0}}
+\headcommand {\beamer@framepages {53}{55}}
+\headcommand {\sectionentry {6}{总结和展望}{56}{总结和展望}{0}}
+\headcommand {\beamer@sectionpages {35}{55}}
+\headcommand {\beamer@subsectionpages {45}{55}}
+\headcommand {\slideentry {6}{0}{1}{56/56}{}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\slideentry {6}{0}{2}{57/59}{}{0}}
+\headcommand {\beamer@framepages {57}{59}}
+\headcommand {\slideentry {6}{0}{3}{60/62}{}{0}}
+\headcommand {\beamer@framepages {60}{62}}
+\headcommand {\slideentry {6}{0}{4}{63/63}{}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\beamer@partpages {1}{63}}
+\headcommand {\beamer@subsectionpages {56}{63}}
+\headcommand {\beamer@sectionpages {56}{63}}
+\headcommand {\beamer@documentpages {63}}
+\headcommand {\def \inserttotalframenumber {27}}

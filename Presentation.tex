@@ -240,20 +240,140 @@
 }
 \subsection{实例应用}
 \frame{
-	\frametitle{\subsecname}
+	\frametitle{芦山地震案例}
+	\begin{columns}
+	\column{0.4\textwidth}<1->
+		\includegraphics[height=5.0cm]{figures/fig4_02.pdf}
+	\column{0.6\textwidth}<1->
 	\begin{itemize}
-		\item<+-> Start here
-		\item<+-> learn
-		\item<+-> practise
+		\item 远震P波和SH波联合反演
+		\item 各道波形分别采用W1，W2以及本文的WT联合加权进行三次反演，对比择优
+		\item 对最优结果进行误差评定
+		\item 与他人成果对比
 	\end{itemize}
+	\end{columns}
+}
+\frame{
+	\frametitle{权重对比分析——稳定性}
+	\begin{columns}
+	\column{0.4\textwidth}<1->
+		\includegraphics[height=3cm]{figures/fig4_03.pdf}
+	\column{0.55\textwidth}<1->
+	\begin{itemize}
+		\item<+-> 拟合度W1>WT>W2,稳定性W1>WT>W2
+		\item<+-> W1出现了双峰，深度约束不理想,易多解
+	\end{itemize}
+	\end{columns}
+\begin{table}[ht]
+\centering
+\label{tab4_02}
+    \begin{tabular}{c c c c}
+    \hline
+    加权方案 & 走向标准差/$^\circ$ & 倾角标准差/$^\circ$ & 滑动角标准差/$^\circ$\\
+    \hline
+    W1		&  1.03     &    0.00   & 0.61 \\
+    W2		&  2.25     &    0.14   & 0.83 \\
+    WT		&  1.66     &    0.00	& 0.59 \\
+    \hline
+    \end{tabular}
+\end{table}
+}
+\frame{
+	\frametitle{权重对比分析——可靠性}
+	\begin{columns}
+	\column{0.55\textwidth}<1->
+		\includegraphics[height=5.0cm]{figures/fig4_04.pdf}
+	\column{0.4\textwidth}<1->
+	\begin{itemize}
+		\item<+-> WT仅在18km左右出现极值，W1在18km，32km左右均有极值
+		\item<+-> W1加权的震源机制随深度变化差异明显，易多解，不可靠
+		\item<+-> 综合稳定性和可靠性考虑，WT加权最优
+	\end{itemize}
+	\end{columns}
+}
+\frame{
+	\frametitle{WT加权误差评价}
+		带误差的结果:走向$211^\circ\pm5^\circ$,倾角$41^\circ\pm1^\circ$,滑动角$94^\circ\pm2^\circ$
+	\begin{columns}
+	\column{0.55\textwidth}<1->
+\begin{table}[ht]
+\centering
+\caption{震源机制各参数间相关性}
+\label{tab4_03}
+    \begin{tabular}{c c c c}
+    \hline
+    相关系数 & 走向 & 倾角 & 滑动角 \\
+    \hline
+	走向 		&1 			&0			&0.91\\
+	倾角		&0			&1			&0\\
+	滑动角		&0.91		&0			&1\\
+    \hline
+    \end{tabular}
+\end{table}
+	\column{0.4\textwidth}<1->
+	\begin{itemize}
+		\item<+-> 相关系数与理论实验较吻合，与预期一致
+	\end{itemize}
+	\end{columns}
+}
+\frame{
+	\frametitle{他人成果对比}
+\begin{table}[ht]
+\centering
+\label{tab4_04}
+    \begin{tabular}{c c c c c c c c c c c }
+    \hline
+    研究者 & 美国地调局 & GCMT & 刘超 &韩立波等 &预测所 \\
+    \hline
+	深度/km			&12	&22	&15	&12	&15	\\
+	走向/$^\circ$	&198&210&220&220&210\\ 
+	倾角/$^\circ$	&33	&38	&35	&50	&47	\\
+	滑动角/$^\circ$	&71	&96	&95	&107&90	\\
+	$M_w$			&6.6&6.6&6.7&6.6&6.5\\
+    \hline
+    研究者 &  刘杰等 & 曾祥方等 & 谢祖军等 & 吕坚等 & 本文\\
+    \hline
+	深度/km			&19	&12	&16	&14	&17 \\
+	走向/$^\circ$	&214&212&210&209&211\\ 
+	倾角/$^\circ$	&39	&47	&44	&46	&41	\\
+	滑动角/$^\circ$	&100&93	&91	&94	&94	\\
+	$M_w$			&6.4&6.7&6.7&6.6&6.4\\
+    \hline
+    \end{tabular}
+\end{table}
+}
+\frame{
+	\frametitle{他人成果对比}
+	\begin{columns}
+	\column{0.55\textwidth}<1->
+		\includegraphics[height=5.0cm]{figures/fig4_06.pdf}
+	\column{0.4\textwidth}<1->
+	\begin{itemize}
+		\item<+-> 震源机制显示的主应力与灰色箭头代表的区域主应力方向以及应力实测(BX)一致
+		\item<+-> 与剪切波快轴暗示的主应力方向一致,且走向和双差重定位的余震空间分布吻合
+		\item<+-> 与龙门山断裂带南段的走向和构造运动背景吻合
+	\end{itemize}
+	\end{columns}
 }
 \section{总结和展望}
 \frame{
-	\frametitle{secname}
+	\frametitle{工作总结}
 	\begin{itemize}
-		\item<+-> Install
-		\item<+-> learn
-		\item<+-> practise
+		\item<+-> 核心工作，提出了一种误差评估方案解决CAP、CPS误差缺失的问题，并从理论和实践分别进行论证方法的有效性
+		\item<+-> 在CAP和CPS基础上针对其加权"冲突"，提出一联合加权的统一方案，并定量精化，优化加权
+		\item<+-> 芦山地震的震源机制反演表明,发震原因是由区域水平西北－东南向的挤压应力长期积累导致的高倾角逆冲位错
 	\end{itemize}
+}
+\frame{
+	\frametitle{不足和展望}
+	\begin{itemize}
+		\item<+-> 目前的误差评价方案仅能分析随机噪声的影响，对模型偏差等系统性误差无能为力
+		\item<+-> 该误差分析方法要求大量样本统计，震要重复反演，大大增加了计算量
+		\item<+-> 目标:应更系统全面地分析各种误差及适当减少计算量
+	\end{itemize}
+}
+\frame{
+	\frametitle{结束}
+		感谢您的宝贵时间
 }
 \end{document}

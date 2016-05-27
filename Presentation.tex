@@ -70,7 +70,7 @@
 \frame{
 	\frametitle{研究现状}
 	\begin{itemize}
-		\item<+->{原理:}
+		\item<+->
 			\begin{equation}
 			\label{eq01}
 			\left\{
@@ -81,13 +81,25 @@
 			 \end{array}
 			\right.
 			\end{equation}
-		\item<+->{方法:}波形拟合(波形数据),格点搜索(公式\ref{eq01}非线性),
-		\item<+->{应用:}CAP,CPS等代表性方法(程序)广泛应用
+		\item<+->
+\begin{equation}
+\left\{
+    \begin{array}{l}
+    s_1=1/2{sin\lambda}sin{2\delta}\\
+    s_2={cos\lambda}{sin\delta}sin2({\phi}-{\phi}_s)+1/2{sin\lambda}{sin2\delta}cos2({\phi}-{\phi}_s)\\
+    s_3=-{cos\lambda}{cos\delta}cos({\phi}-{\phi}_s)+{sin\lambda}{cos2\delta}sin({\phi}-{\phi}_s)\\
+    t_1={cos\lambda}{cos\delta}sin({\phi}-{\phi}_s)+{sin\lambda}{cos2\delta}cos({\phi}-{\phi}_s)\\
+    t_2={cos\lambda}{sin\delta}cos2({\phi}-{\phi}_s)-1/2{sin\lambda}{sin2\delta}sin2({\phi}-{\phi}_s)\\
+    \end{array}
+\right.
+\end{equation}
 	\end{itemize}
 }
 \frame{
 	\frametitle{研究现状}
 	\begin{itemize}
+		\item<+->{方法:}波形拟合(波形数据),格点搜索(公式\ref{eq01}非线性),
+		\item<+->{应用:}CAP,CPS等代表性方法(程序)广泛应用
 		\item<+->{优点:}
 			\begin{enumerate}[<+->]
 			\item 波形数据充分应用了地震波信息
@@ -111,7 +123,7 @@
 
 \section{解决方案}
 \frame{
-\frametitle{\subsecname}
+\frametitle{\secname}
 	\begin{itemize}
 		\item 优化定权
 			\begin{enumerate}
@@ -129,14 +141,14 @@
 \frame{
 \frametitle{优化加权}
 	\begin{itemize}
-		\item<+-> 联合加权
+		\item<+-> 统一加权
 			\begin{enumerate}[<+->]
 			\item CPS加权$W1$,考虑信噪比,权重随震中距单调递减
 			\item CAP加权$W2$,考虑振幅调节，权重随震中距单调递增
 			\item 信噪比和振幅调节均可提高数据质量，应联合统一$WT=W1*W2$
 			\end{enumerate}
 		\item<+-> 定量精化
-			\begin{enumerate}[<+->]
+			\begin{enumerate}
 			\item 利用震中距估计的$W1,W2$均较粗糙，改为由波形数据直接定量计算
 			\item CAP加权估计$W2$的公式$(r/r_0)^p$中的参考参数$r_0,p$只能经验判定，主观性很强
 			\end{enumerate}
@@ -175,6 +187,14 @@
 \section{实践检验}
 \subsection{理论实验}
 \frame{
+	\frametitle{\subsecname}
+	\begin{itemize}
+		\item 无噪实验
+		\item 权重对比实验
+		\item 噪声强度对比实验
+	\end{itemize}
+}
+\frame{
 	\frametitle{实验条件}
 		走向250$^\circ$，倾角40$^\circ$，滑动角82$^\circ$，$M_w$震级6.5，震源深度17km 
 		\begin{columns}
@@ -188,10 +208,17 @@
 \frame{
 	\frametitle{无噪实验}
 	\begin{itemize}
-		\item<+-> 数据拟合度100％，结果与理论设定一致
-		\item<+-> 台站分布合理，满足反演要求
-		\item<+-> 说明分辩核为单位矩阵
-		\item<+-> 计算机数值计算引起的误差可忽略
+		\item<+-> {结果}\\
+			\begin{enumerate}
+				\item 结果与理论设定一致
+				\item 理论与观测数据拟合度100％
+			\end{enumerate}
+		\item<+-> {结论}
+			\begin{enumerate}[<+->]
+				\item 台站分布合理，满足反演要求
+				\item 说明分辩核为单位矩阵
+				\item 计算机数值计算引起的误差可忽略
+			\end{enumerate}
 	\end{itemize}
 }
 \frame{
@@ -240,13 +267,13 @@
 }
 \subsection{实例应用}
 \frame{
-	\frametitle{芦山地震案例}
+	\frametitle{\subsecname}
 	\begin{columns}
 	\column{0.4\textwidth}<1->
 		\includegraphics[height=5.0cm]{figures/fig4_02.pdf}
 	\column{0.6\textwidth}<1->
 	\begin{itemize}
-		\item 远震P波和SH波联合反演
+		\item 芦山地震案例，远震P波和SH波联合反演
 		\item 各道波形分别采用W1，W2以及本文的WT联合加权进行三次反演，对比择优
 		\item 对最优结果进行误差评定
 		\item 与他人成果对比
@@ -317,7 +344,7 @@
 	\end{columns}
 }
 \frame{
-	\frametitle{他人成果对比}
+	\frametitle{结果对比}
 \begin{table}[ht]
 \centering
 \label{tab4_04}
@@ -343,7 +370,7 @@
 \end{table}
 }
 \frame{
-	\frametitle{他人成果对比}
+	\frametitle{结果检验}
 	\begin{columns}
 	\column{0.55\textwidth}<1->
 		\includegraphics[height=5.0cm]{figures/fig4_06.pdf}
@@ -374,6 +401,7 @@
 }
 \frame{
 	\frametitle{结束}
-		感谢您的宝贵时间
+		\centering
+		感谢您的宝贵时间,欢迎指正！
 }
 \end{document}

@@ -65,22 +65,11 @@
 		\item 介质结构、海啸模拟等研究
 	\end{itemize}
 }
-\section{研究背景}
-\frame{
-	\frametitle{研究背景}
-	\begin{itemize}
-		\item{初动极性反演:}\\
-			早期方法，只用了初动方向信息，结果不稳定，台站约束多
-		\item{振幅反演:}\\
-			利用了震相振幅的定量数据，如其辐射规律或振幅比值
-		\item{波形拟合反演:}
-			利用了地震波形中振幅相位等所有信息，约束更强，结果更稳定
-	\end{itemize}
-}
+\section{研究现状}
 \frame{
 	\frametitle{波形拟合原理}
 	\begin{itemize}
-		\item<+->
+		\item
 			\begin{equation}
 			\label{eq01}
 			\left\{
@@ -91,7 +80,7 @@
 			 \end{array}
 			\right.
 			\end{equation}
-		\item<+->
+		\item
 \begin{equation}
 \left\{
     \begin{array}{l}
@@ -108,55 +97,28 @@
 \frame{
 	\frametitle{波形拟合介绍}
 	\begin{itemize}
-		\item<+->{方法:}波形拟合(波形数据),格点搜索(公式\ref{eq01}非线性),
-		\item<+->{应用:}CAP,CPS等代表性方法(程序)广泛应用
-		\item<+->{优点:}
-			\begin{enumerate}[<+->]
-			\item 波形数据充分应用了地震波信息
-			\item 震源机制解空间较小，且正演合成迅速，格点搜索可快速反演
-			\end{enumerate}
-		\item<+->{问题:}
-			\begin{enumerate}[<+->]
-			\item 无法直接给出误差评价,无法有效识别病态问题
+		\item{方法:}格点搜索(公式\ref{eq01}非线性),震源机制解空间较小，且正演合成迅速，格点搜索可快速反演
+		\item{应用:}CAP,CPS等代表性方法(程序)广泛应用
+		\item{问题:}
+			\begin{enumerate}
+			\item 无法直接给出误差评价
 			\item CAP和CPS的加权方案不一致,数值相对大小冲突
 			\end{enumerate}
 	\end{itemize}
 }
-\frame{
-	\frametitle{本文目标}
-	\begin{itemize}
-		\item 统一优化定权
-		\item 针对CAP、CPS给出结果误差评价
-	\end{itemize}
-}
 
 \section{解决方案}
-\frame{
-\frametitle{\secname}
-	\begin{itemize}
-		\item 优化定权
-			\begin{enumerate}
-			\item 分析二者定权的理论依据,联合定权解决差异
-			\item 数值定量精化，结果尽量客观
-			\end{enumerate}
-		\item 针对CAP、CPS给出结果误差评价
-			\begin{enumerate}
-			\item 估计数据噪声
-			\item 计算震源机制协方差矩阵
-			\end{enumerate}
-	\end{itemize}
-}
 \subsection{优化加权}
 \frame{
 \frametitle{优化加权}
 	\begin{itemize}
-		\item<+-> 统一加权
-			\begin{enumerate}[<+->]
+		\item 联合加权
+			\begin{enumerate}
 			\item CPS加权$W1$,考虑信噪比,权重随震中距单调递减
 			\item CAP加权$W2$,考虑振幅调节，权重随震中距单调递增
 			\item 信噪比和振幅调节均可提高数据质量，应联合统一$WT=W1*W2$
 			\end{enumerate}
-		\item<+-> 定量精化
+		\item 定量精化
 			\begin{enumerate}
 			\item 利用震中距估计的$W1,W2$均较粗糙，改为由波形数据直接定量计算
 			\item CAP加权估计$W2$的公式$(r/r_0)^p$中的参考参数$r_0,p$只能经验判定，主观性很强
@@ -195,14 +157,6 @@
 }
 \section{理论实验}
 \frame{
-	\frametitle{\secname}
-	\begin{itemize}
-		\item 无噪实验
-		\item 权重对比实验
-		\item 噪声强度对比实验
-	\end{itemize}
-}
-\frame{
 	\frametitle{实验条件}
 		走向250$^\circ$，倾角40$^\circ$，滑动角82$^\circ$，$M_w$震级6.5，震源深度17km 
 		\begin{columns}
@@ -217,15 +171,14 @@
 \frame{
 	\frametitle{无噪实验}
 	\begin{itemize}
-		\item<+-> {结果}\\
+		\item {结果}\\
 			\begin{enumerate}
 				\item 结果与理论设定一致
 				\item 理论与观测数据拟合度100％
 			\end{enumerate}
-		\item<+-> {结论}
-			\begin{enumerate}[<+->]
+		\item {结论}
+			\begin{enumerate}
 				\item 台站分布合理，满足反演要求
-				\item 说明分辩核为单位矩阵
 				\item 计算机数值计算引起的误差可忽略
 			\end{enumerate}
 	\end{itemize}
@@ -246,11 +199,7 @@
     \hline
     \end{tabular}
 	\end{table}
-	\begin{itemize}
-		\item W1加权拟合度最高，但深度有偏差
-		\item W2加权深度无偏差，拟合度最低
-		\item 本文联合加权深度无偏，拟合度较高，综合效果最优
-	\end{itemize}
+	综合结果偏差和拟合度高低，WT加权最优
 }
 \subsection{噪声强度对比实验}
 \frame{
@@ -271,9 +220,8 @@
     \end{tabular}
 	\end{table}
 	\begin{itemize}
-		\item<+-> 局部线性近似下，理论误差大小与噪声强度成正比，与结果吻合
-		\item<+-> 拟合度表征反演受噪声影响程度，结果表明拟合度低，误差大，稳定性差
-		\item<+-> 各组反演结果均在误差范围内，证明了误差估计的准确性
+		\item 理论误差大小与噪声强度成正比，与结果吻合
+		\item 拟合度高，稳定性好
 	\end{itemize}
 }
 \section{实例应用}
@@ -285,9 +233,7 @@
 	\column{0.6\textwidth}<1->
 	\begin{itemize}
 		\item 芦山地震案例，远震P波和SH波联合反演
-		\item 各道波形分别采用W1，W2以及本文的WT联合加权进行三次反演，对比择优
-		\item 对最优结果进行误差评定
-		\item 与他人成果对比
+		\item 各道波形分别采用W1，W2以及本文的WT联合加权进行三次反演
 	\end{itemize}
 	\end{columns}
 }
@@ -324,10 +270,10 @@
 		\includegraphics[height=3.5cm]{figures/fig3_04.pdf}
 	\column{0.5\textwidth}<1->
 	\begin{itemize}
-		\item<+-> 浅源地震在远震情况下，除震源区域，pP，sP和P震相的传播路径基本相同
-		\item<+-> pP,P震相的到时差${\delta}t_{pP}=(2hcosi)/\alpha$\\
+		\item 浅源地震在远震情况下，除震源区域，pP，sP和P震相的传播路径基本相同
+		\item pP,P震相的到时差${\delta}t_{pP}=(2hcosi)/\alpha$\\
 sP,P震相的到时差${\delta}t_{sP}=(h/\alpha)(cosi+(3-sin^2i)^{1/2})$
-		\item<+-> 到时差只与区域速度深度等相关，与传播过程的介质无关，可以很好约束震源深度，本文“P"波包含了pP,sP
+		\item 到时差只与区域速度深度等相关，与传播过程的介质无关，可以很好约束震源深度，本文“P"波包含了pP,sP
 	\end{itemize}
 	\end{columns}
 }
@@ -338,9 +284,9 @@ sP,P震相的到时差${\delta}t_{sP}=(h/\alpha)(cosi+(3-sin^2i)^{1/2})$
 		\includegraphics[height=5.0cm]{figures/fig4_04.pdf}
 	\column{0.4\textwidth}<1->
 	\begin{itemize}
-		\item<+-> WT仅在18km左右出现极值，W1在18km，32km左右均有极值
-		\item<+-> W1加权的震源机制随深度变化差异明显，易多解，不可靠
-		\item<+-> 综合稳定性和可靠性考虑，WT加权最优
+		\item WT仅在18km左右出现极值，W1在18km，32km左右均有极值
+		\item W1加权的震源机制随深度变化差异明显，易多解，不可靠
+		\item 综合稳定性和可靠性考虑，WT加权最优
 	\end{itemize}
 	\end{columns}
 }
@@ -425,7 +371,7 @@ sP,P震相的到时差${\delta}t_{sP}=(h/\alpha)(cosi+(3-sin^2i)^{1/2})$
 	\frametitle{工作总结}
 	\begin{itemize}
 		\item<+-> 核心工作，提出了一种误差评估方案解决CAP、CPS误差缺失的问题，并从理论和实践分别进行论证方法的有效性
-		\item<+-> 在CAP和CPS基础上针对其加权"冲突"，提出一联合加权的统一方案，并定量精化，优化加权
+		\item<+-> 在CAP和CPS基础上针对其加权冲突，提出一联合加权的统一方案，并定量精化，优化加权
 		\item<+-> 芦山地震的震源机制反演表明,发震原因是由区域水平西北－东南向的挤压应力长期积累导致的高倾角逆冲位错
 	\end{itemize}
 }

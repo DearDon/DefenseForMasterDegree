@@ -65,10 +65,20 @@
 		\item 介质结构、海啸模拟等研究
 	\end{itemize}
 }
-\section{研究现状和本文目标}
-\subsection{研究现状}
+\section{研究背景}
 \frame{
-	\frametitle{研究现状}
+	\frametitle{研究背景}
+	\begin{itemize}
+		\item{初动极性反演:}\\
+			早期方法，只用了初动方向信息，结果不稳定，台站约束多
+		\item{振幅反演:}\\
+			利用了震相振幅的定量数据，如其辐射规律或振幅比值
+		\item{波形拟合反演:}
+			利用了地震波形中振幅相位等所有信息，约束更强，结果更稳定
+	\end{itemize}
+}
+\frame{
+	\frametitle{波形拟合原理}
 	\begin{itemize}
 		\item<+->
 			\begin{equation}
@@ -96,7 +106,7 @@
 	\end{itemize}
 }
 \frame{
-	\frametitle{研究现状}
+	\frametitle{波形拟合介绍}
 	\begin{itemize}
 		\item<+->{方法:}波形拟合(波形数据),格点搜索(公式\ref{eq01}非线性),
 		\item<+->{应用:}CAP,CPS等代表性方法(程序)广泛应用
@@ -112,9 +122,8 @@
 			\end{enumerate}
 	\end{itemize}
 }
-\subsection{本文目标}
 \frame{
-	\frametitle{\subsecname}
+	\frametitle{本文目标}
 	\begin{itemize}
 		\item 统一优化定权
 		\item 针对CAP、CPS给出结果误差评价
@@ -184,10 +193,9 @@
 	\end{itemize}
 	\end{columns}
 }
-\section{实践检验}
-\subsection{理论实验}
+\section{理论实验}
 \frame{
-	\frametitle{\subsecname}
+	\frametitle{\secname}
 	\begin{itemize}
 		\item 无噪实验
 		\item 权重对比实验
@@ -205,6 +213,7 @@
 		\includegraphics[height=5.5cm,angle=-90]{figures/fig3_02.pdf}
 		\end{columns}
 }
+\subsection{无噪实验}
 \frame{
 	\frametitle{无噪实验}
 	\begin{itemize}
@@ -221,6 +230,7 @@
 			\end{enumerate}
 	\end{itemize}
 }
+\subsection{权重对比实验}
 \frame{
 	\frametitle{权重对比实验}
 	\begin{table}[ht]
@@ -242,6 +252,7 @@
 		\item 本文联合加权深度无偏，拟合度较高，综合效果最优
 	\end{itemize}
 }
+\subsection{噪声强度对比实验}
 \frame{
 	\frametitle{噪声强度对比实验}
 	\begin{table}[ht]
@@ -265,9 +276,9 @@
 		\item<+-> 各组反演结果均在误差范围内，证明了误差估计的准确性
 	\end{itemize}
 }
-\subsection{实例应用}
+\section{实例应用}
 \frame{
-	\frametitle{\subsecname}
+	\frametitle{\secname}
 	\begin{columns}
 	\column{0.4\textwidth}<1->
 		\includegraphics[height=5.0cm]{figures/fig4_02.pdf}
@@ -306,6 +317,21 @@
 \end{table}
 }
 \frame{
+	\frametitle{权重对比分析——深度约束震相pP,sP}
+	\begin{columns}
+	\column{0.50\textwidth}<1->
+		\includegraphics[height=2.5cm]{figures/fig3_03.pdf}\\
+		\includegraphics[height=3.5cm]{figures/fig3_04.pdf}
+	\column{0.5\textwidth}<1->
+	\begin{itemize}
+		\item<+-> 浅源地震在远震情况下，除震源区域，pP，sP和P震相的传播路径基本相同
+		\item<+-> pP,P震相的到时差${\delta}t_{pP}=(2hcosi)/\alpha$\\
+sP,P震相的到时差${\delta}t_{sP}=(h/\alpha)(cosi+(3-sin^2i)^{1/2})$
+		\item<+-> 到时差只与区域速度深度等相关，与传播过程的介质无关，可以很好约束震源深度，本文“P"波包含了pP,sP
+	\end{itemize}
+	\end{columns}
+}
+\frame{
 	\frametitle{权重对比分析——可靠性}
 	\begin{columns}
 	\column{0.55\textwidth}<1->
@@ -320,16 +346,19 @@
 }
 \frame{
 	\frametitle{WT加权误差评价}
-		带误差的结果:走向$211^\circ\pm5^\circ$,倾角$41^\circ\pm1^\circ$,滑动角$94^\circ\pm2^\circ$
+	\begin{itemize}
+		\item 带误差的结果:走向$211^\circ\pm5^\circ$,倾角$41^\circ\pm1^\circ$,滑动角$94^\circ\pm2^\circ$
+		\item 相关系数与理论实验较吻合，与相关系数由特定地震类型决定的预期一致
+	\end{itemize}
 	\begin{columns}
-	\column{0.55\textwidth}<1->
+	\column{0.48\textwidth}<1->
 \begin{table}[ht]
 \centering
-\caption{震源机制各参数间相关性}
+\caption{芦山地震震源机制相关性}
 \label{tab4_03}
     \begin{tabular}{c c c c}
     \hline
-    相关系数 & 走向 & 倾角 & 滑动角 \\
+    相关性 & 走向 & 倾角 & 滑动角 \\
     \hline
 	走向 		&1 			&0			&0.91\\
 	倾角		&0			&1			&0\\
@@ -337,10 +366,21 @@
     \hline
     \end{tabular}
 \end{table}
-	\column{0.4\textwidth}<1->
-	\begin{itemize}
-		\item<+-> 相关系数与理论实验较吻合，与预期一致
-	\end{itemize}
+	\column{0.48\textwidth}<1->
+\begin{table}[ht]
+\centering
+\caption{$10^{-5}$理论噪声组参数相关性}
+\label{tab3_05}
+    \begin{tabular}{c c c c}
+    \hline
+    相关性 & 走向 & 倾角& 滑动角 \\
+    \hline
+	走向 		&1 			&-0.02		&0.85\\
+	倾角		&-0.02		&1			&0.11\\
+	滑动角		&0.85		&0.11		&1\\
+    \hline
+    \end{tabular}
+\end{table}
 	\end{columns}
 }
 \frame{
@@ -356,7 +396,6 @@
 	走向/$^\circ$	&198&210&220&220&210\\ 
 	倾角/$^\circ$	&33	&38	&35	&50	&47	\\
 	滑动角/$^\circ$	&71	&96	&95	&107&90	\\
-	$M_w$			&6.6&6.6&6.7&6.6&6.5\\
     \hline
     研究者 &  刘杰等 & 曾祥方等 & 谢祖军等 & 吕坚等 & 本文\\
     \hline
@@ -364,7 +403,6 @@
 	走向/$^\circ$	&214&212&210&209&211\\ 
 	倾角/$^\circ$	&39	&47	&44	&46	&41	\\
 	滑动角/$^\circ$	&100&93	&91	&94	&94	\\
-	$M_w$			&6.4&6.7&6.7&6.6&6.4\\
     \hline
     \end{tabular}
 \end{table}
@@ -372,13 +410,13 @@
 \frame{
 	\frametitle{结果检验}
 	\begin{columns}
-	\column{0.55\textwidth}<1->
+	\column{0.50\textwidth}<1->
 		\includegraphics[height=5.0cm]{figures/fig4_06.pdf}
-	\column{0.4\textwidth}<1->
+	\column{0.5\textwidth}<1->
 	\begin{itemize}
-		\item<+-> 震源机制显示的主应力与灰色箭头代表的区域主应力方向以及应力实测(BX)一致
-		\item<+-> 与剪切波快轴暗示的主应力方向一致,且走向和双差重定位的余震空间分布吻合
-		\item<+-> 与龙门山断裂带南段的走向和构造运动背景吻合
+		\item<+-> 震源机制主应力与的区域主应力方向以及应力实测(BX)一致,与剪切波快轴暗示的主应力方向一致
+		\item<+-> 走向与龙门山断裂带南段的走向相近,且和双差重定位的余震空间分布吻合
+		\item<+-> 略超过90$^\circ$的滑动角和南段右旋逆冲的构造运动背景吻合
 	\end{itemize}
 	\end{columns}
 }
@@ -395,8 +433,8 @@
 	\frametitle{不足和展望}
 	\begin{itemize}
 		\item<+-> 目前的误差评价方案仅能分析随机噪声的影响，对模型偏差等系统性误差无能为力
-		\item<+-> 该误差分析方法要求大量样本统计，震要重复反演，大大增加了计算量
-		\item<+-> 目标:应更系统全面地分析各种误差及适当减少计算量
+		\item<+-> 该误差分析方法要求大量样本统计，震要重复反演，计算压力大
+		\item<+-> 前景:应更系统全面地分析各种误差及适当减少计算量
 	\end{itemize}
 }
 \frame{
